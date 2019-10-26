@@ -1,7 +1,11 @@
-##to start project 
+
+##Specifications:
+php7.1+, mysql5.7+
+##to start project
 use console commands:
 
 From root: \
+`composer install` \
 `php init` (choose production) 
 >then go to *common/config/main-local.php* and change db credits to yours
 
@@ -19,7 +23,8 @@ Or use command from (*/frontend/web*): `php -S localhost:8000`
 **Parse logic** in (*console/services*) and controller is in (*console/controllers*) 
 
 **Client logic** (vue) is in (*/frontend/vue*). 
->To compile use command from (/frontend): `npm run production` (or `npm run watch`)
+>To have ability to compile - use command from (*/frontend*): `npm install`  \
+>To compile - use command from (/frontend): `npm run production` (or `npm run watch`)
 
 **Styles** are in (*/frontend/web/scss*) 
 >To compile them use command from (*/frontend/gulp*): `gulp watch`
