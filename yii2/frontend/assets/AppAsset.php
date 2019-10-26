@@ -2,7 +2,9 @@
 
 namespace frontend\assets;
 
+use frontend\assets\vendor\VueAsset;
 use yii\web\AssetBundle;
+use yii\web\YiiAsset;
 
 /**
  * Main frontend application asset bundle.
@@ -12,12 +14,13 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/main.css',
     ];
     public $js = [
+        'js/app.js',
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        YiiAsset::class,
+        VueAsset::class
     ];
 }

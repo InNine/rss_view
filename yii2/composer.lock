@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "479ef81c55accfcdd0cce616ef4143d7",
+    "content-hash": "7feb47c7e4207a5800b03a9e42130e6c",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -328,6 +328,18 @@
                 "html"
             ],
             "time": "2019-07-14T18:58:38+00:00"
+        },
+        {
+            "name": "npm-asset/vue",
+            "version": "2.6.10",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/vue/-/vue-2.6.10.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3801,7 +3813,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.0"
+        "php": ">=7.1.0"
     },
     "platform-dev": []
 }

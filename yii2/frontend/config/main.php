@@ -13,10 +13,12 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-frontend',
+            'parsers' => [
+                'application/json' => \yii\web\JsonParser::class,
+            ]
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => \common\domain\user\models\User::class,
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
@@ -36,14 +38,18 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/' => 'site/index',
+                'auth/login'  => 'site/index',
+                'auth/register'  => 'site/index',
+                '/article' => 'site/index',
+                '/article/<id:\d+>' => 'site/index'
             ],
         ],
-        */
     ],
     'params' => $params,
+    'modules' => include 'modules.php'
 ];

@@ -1,0 +1,30 @@
+.words {
+  width: 100%;
+  max-width: 960px;
+  text-align: center;
+
+  &__header {
+    padding: 1.4em 1.2em;
+    background-color: $blue;
+    letter-spacing: .1em;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white;
+  }
+  &__content {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: $white;
+    color:black;
+    font-size: 15px;
+    padding: 1.4em 1.2em;
+    p {
+      flex: 1 0 20%;
+    }
+    span {
+      color: $orange;
+    }
+  }
+}
