@@ -1,1 +1,1 @@
-# rss_view
+check readme in /yii2
