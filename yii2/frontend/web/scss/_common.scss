@@ -45,22 +45,24 @@ a {
   padding: 1em;
 
 }
-
-.loading {
-  pointer-events: none !important;
-  opacity: 0.4 !important;
+#app {
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-  &::after {
-    content: url('../images/loading.svg');
-    display:block;
-    box-sizing: border-box;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    background-size: 20px 20px;
-    width: 20px;
-    height: 20px;
-    margin-top: -10px;
-    margin-left: -10px;
-  }
+
+  &.loading {
+    pointer-events: none !important;
+    opacity: 0.4 !important;
+    &::after {
+      content: url('../images/loading.svg');
+      display:block;
+      box-sizing: border-box;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      background-size: 20px 20px;
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -10px;
+    }
+}
 }

@@ -13,13 +13,20 @@
                 <div class="table__item" role="columnheader">title</div>
                 <div class="table__item" role="columnheader">Summary</div>
             </div>
-            <div class="table__row" role="rowgroup" v-for="(item, index) in articles">
-                <div class="table__item" role="cell"><a :href="item.link">{{item.title}}</a></div>
-                <div class="table__item" role="cell" v-html="item.description"></div>
+            <div class="table__row" role="rowgroup" v-for="(item) in articles">
+                <div class="table__item" role="cell">
+                    <a :href="item.author_link" class="table__row__author">{{item.author_name}}</a>
+                    <a :href="item.link" class="table__row__title">{{item.title}}</a>
+                </div>
+                <div class="table__item" role=" cell">
+                    <div v-html="item.description"></div>
+                    <div class="table__item__date">{{item.date | moment("D MMMM YYYY")}}</div>
+                </div>
+
             </div>
         </div>
-        <div class="pagination" >
-            <div v-for="(item, index) in pagination">
+        <div class="pagination">
+            <div v-for="(item) in pagination">
                 <router-link v-if="item.type === 'link'" class="pagination__link" :class="item.class"
                              :to="{path: '/article/' + item.page}">
                     {{item.page}}
@@ -33,7 +40,7 @@
 
 <script>
     import axios from 'axios';
-
+    import moment from 'vue-moment';
     export default {
         name: "article_list",
         data() {

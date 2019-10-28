@@ -10,6 +10,7 @@ namespace common\domain\article\repositories;
 
 use common\base\BaseRepository;
 use common\domain\article\models\Article;
+use common\domain\author\models\Author;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 
@@ -64,9 +65,17 @@ class ArticleRepository extends BaseRepository
     public function getQueryForList(): ActiveQuery
     {
         return $this->getQuery()
-            ->select(['title', 'link', 'summary AS description']); //need change name of summary bcs of js deprecated symbol
+            ->select([
+                'title',
+                'link',
+                'description' => 'summary', //need change name of summary bcs of js deprecated symbol
+                'date' => 'parse_updated_at', // article rss date
+                'author_name' => Author::tableName() . '.name',
+                'author_link' => Author::tableName() . '.url'])
+            ->leftJoin(Author::tableName(), '`author`.`id` = `article`.`author_id`');
 
     }
+
     /**
      * @param int|null $limit
      * @param int|null $offset

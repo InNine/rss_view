@@ -23,7 +23,7 @@ class ArticleService
             $page = $pages; // or we can just throw an exception
         }
         $offset = ($page - 1) * 5;
-        $articles = $repository->getAllForList(5, $offset); // returning 10 max articles each page
+        $articles = $repository->getAllForList(5, $offset); // returning 5 max articles each page
 
         // get most frequent words
         $words = [];

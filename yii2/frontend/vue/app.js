@@ -2,7 +2,10 @@ import Vue from 'vue';
 import axios from 'axios';
 import {store} from './modules/store';
 import {router} from './modules/router';
+import moment from 'vue-moment';
 
+//format date
+Vue.use(moment);
 
 //Auth and default headers
 if (store.getters.isAuthenticated) {
@@ -37,6 +40,6 @@ let app = new Vue({
         removeLoading: function () {
             store.state.isLoading = false;
 
-        }
+        },
     }
 });
